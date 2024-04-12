@@ -1,0 +1,20 @@
+/**
+ * https://docs.gradle.org/current/userguide/publishing_maven.html
+ * https://developer.android.google.cn/studio/build/maven-publish-plugin
+ * https://github.com/jitpack/android-example/blob/master/library/build.gradle
+ */
+apply plugin: 'maven-publish'
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.y4n9b0'
+                artifactId = releaseArtifactId
+                version = releaseVersion
+            }
+        }
+    }
+}

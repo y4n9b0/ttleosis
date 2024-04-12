@@ -32,3 +32,9 @@ android {
 dependencies {
     implementation "androidx.startup:startup-runtime:1.1.1"
 }
+
+ext {
+    releaseArtifactId = 'ttleosis'
+    releaseVersion = '1.0.0'
+}
+apply from: "${rootDir}/mvn-publish.gradle"
