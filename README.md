@@ -37,21 +37,24 @@ adb logcat -s ttleosis
 Example logcat output:
 ```text
 D ttleosis: onActivityPostSaveInstanceState activity=y4n9b0.ttleosis.app.TtleosisReproduceActivity@8f26a15
-W ttleosis: Bundle parcelSize=541364
+D ttleosis: Bundle parcelSize=7972
 D ttleosis: ├─ Bundle@android:viewHierarchyState parcelSize=772
 D ttleosis: │  └─ SparseArray@android:views size=6
-D ttleosis: ├─ Bundle@androidx.lifecycle.BundlableSavedStateRegistry.key parcelSize=539964
+D ttleosis: ├─ Bundle@androidx.lifecycle.BundlableSavedStateRegistry.key parcelSize=6572
 D ttleosis: │  ├─ Bundle@androidx:appcompat parcelSize=4
 D ttleosis: │  ├─ Bundle@androidx.lifecycle.internal.SavedStateHandlesProvider parcelSize=4
-D ttleosis: │  ├─ Bundle@android:support:activity-result parcelSize=151868
-D ttleosis: │  │  ├─ ArrayList@KEY_COMPONENT_ACTIVITY_REGISTERED_KEYS size=903
-D ttleosis: │  │  ├─ ArrayList@KEY_COMPONENT_ACTIVITY_REGISTERED_RCS size=903
+D ttleosis: │  ├─ Bundle@android:support:activity-result parcelSize=2180
+D ttleosis: │  │  ├─ ArrayList@KEY_COMPONENT_ACTIVITY_REGISTERED_KEYS size=12
+D ttleosis: │  │  ├─ ArrayList@KEY_COMPONENT_ACTIVITY_REGISTERED_RCS size=12
 D ttleosis: │  │  ├─ Bundle@KEY_COMPONENT_ACTIVITY_PENDING_RESULT parcelSize=4
 D ttleosis: │  │  └─ ArrayList@KEY_COMPONENT_ACTIVITY_LAUNCHED_KEYS size=0
-D ttleosis: │  └─ Bundle@android:support:fragments parcelSize=387780
-D ttleosis: │     └─ FragmentManagerState@android:support:fragments 
+D ttleosis: │  └─ Bundle@android:support:fragments parcelSize=4076
+D ttleosis: │     └─ FragmentManagerState@android:support:fragments size=3
+D ttleosis: │        ├─ FragmentState@com.ly.genjidialog.GenjiDialog(86662b6c-f03a-408f-b394-28d074535130) parcelSize=1208
+D ttleosis: │        ├─ FragmentState@com.ly.genjidialog.GenjiDialog(c43b800f-e7e0-466b-9f64-a4fc0085595d) parcelSize=1208
+D ttleosis: │        └─ FragmentState@com.ly.genjidialog.GenjiDialog(db20cf61-7974-4793-ac46-7fc9d78d8c2c) parcelSize=1208
 D ttleosis: ├─ Integer@android:lastAutofillId 
-D ttleosis: └─ FragmentManagerState@android:fragments 
+D ttleosis: └─ FragmentManagerState@android:fragments parcelSize=260
 ```
 
 License
