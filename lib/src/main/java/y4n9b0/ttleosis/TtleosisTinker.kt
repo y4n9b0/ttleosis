@@ -14,7 +14,7 @@ object TtleosisTinker : ActivityLifecycleCallbacks {
 
     internal const val TAG = "ttleosis"
 
-    private var debug = false
+    var debug: Boolean = false
     private val map = mutableMapOf<String, Bundle>()
 
     override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {}

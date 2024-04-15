@@ -21,14 +21,7 @@ internal fun Bundle.log() {
         Log.d(TAG, "${bundle.javaClass.simpleName} parcelSize=$size")
     }
     val stack = Stack<BundleElement>()
-    bundle.flat().reversed().forEachIndexed { index, element ->
-        stack.push(
-            element.apply {
-                indent = ""
-                isLast = index == 0
-            }
-        )
-    }
+    bundle.flat().reversed().forEach(stack::push)
 
     while (stack.isNotEmpty()) {
         val element = stack.pop()
@@ -43,14 +36,8 @@ internal fun Bundle.log() {
                 val s = p.dataSize()
                 p.recycle()
                 suffix = "parcelSize=$s"
-                value.flat().reversed().forEachIndexed { i, e ->
-                    stack.push(
-                        e.apply {
-                            indent = element.indent + if (element.isLast) "   " else "│  "
-                            isLast = i == 0
-                        }
-                    )
-                }
+                val indent = element.indent + if (element.isLast) "   " else "│  "
+                value.flat(indent).reversed().forEach(stack::push)
             }
 
             is Array<*> -> suffix = "size=${value.size}"
@@ -72,9 +59,14 @@ internal fun Bundle.log() {
     }
 }
 
-private fun Bundle.flat(): List<BundleElement> = keySet().mapNotNull { key ->
-    get(key)?.let { value ->
-        BundleElement(key, value)
+@Suppress("DEPRECATION")
+private fun Bundle.flat(indent: String = ""): List<BundleElement> {
+    return keySet().mapNotNull { key ->
+        get(key)?.let { value ->
+            BundleElement(key, value, indent)
+        }
+    }.apply {
+        lastOrNull()?.isLast = true
     }
 }
 

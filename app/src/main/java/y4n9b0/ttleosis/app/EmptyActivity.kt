@@ -9,6 +9,7 @@ class EmptyActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_empty)
+        title = "Good choice 👍"
     }
 
     companion object {
