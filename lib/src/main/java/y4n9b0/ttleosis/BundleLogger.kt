@@ -87,17 +87,17 @@ private fun logAndroidxFragmentManagerState(element: BundleElement): Boolean {
         Log.d(TAG, "$fmsIndent$fmsName@${element.key} size=$size")
         isParentLogged = true
         val fragmentStateClass = Class.forName("androidx.fragment.app.FragmentState")
-        val nameFiled = fragmentStateClass.getDeclaredField("mClassName")
-        val whoFiled = fragmentStateClass.getDeclaredField("mWho")
-        nameFiled.isAccessible = true
-        whoFiled.isAccessible = true
+        val nameField = fragmentStateClass.getDeclaredField("mClassName")
+        val whoField = fragmentStateClass.getDeclaredField("mWho")
+        nameField.isAccessible = true
+        whoField.isAccessible = true
         activeFragmentStates.forEachIndexed { index, fragmentState ->
             val parcel = Parcel.obtain()
             (fragmentState as Parcelable).writeToParcel(parcel, 0)
             val parcelSize = parcel.dataSize()
             parcel.recycle()
-            val name = nameFiled.get(fragmentState) as String
-            val who = whoFiled.get(fragmentState) as String
+            val name = nameField.get(fragmentState) as String
+            val who = whoField.get(fragmentState) as String
             val indent = element.indent + (if (element.isLast) "   " else "│  ") + (if (index == size - 1) "└─ " else "├─ ")
             Log.d(TAG, "$indent${fragmentState.javaClass.simpleName}@$name($who) parcelSize=$parcelSize")
         }
