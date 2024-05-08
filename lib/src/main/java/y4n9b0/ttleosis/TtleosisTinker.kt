@@ -14,7 +14,8 @@ object TtleosisTinker : ActivityLifecycleCallbacks {
 
     internal const val TAG = "ttleosis"
 
-    var debug: Boolean = false
+    var debug: Boolean? = null
+
     private val map = mutableMapOf<String, Bundle>()
 
     override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {}
@@ -27,7 +28,7 @@ object TtleosisTinker : ActivityLifecycleCallbacks {
 
     override fun onActivityPostSaveInstanceState(activity: Activity, outState: Bundle) {
         super.onActivityPostSaveInstanceState(activity, outState)
-        if (debug) {
+        if (debug!!) {
             Log.d(TAG, "onActivityPostSaveInstanceState activity=$activity")
             outState.log()
         }
@@ -46,7 +47,7 @@ object TtleosisTinker : ActivityLifecycleCallbacks {
     }
 
     fun register(app: Application) {
-        debug = isDebuggable(app)
+        debug = debug ?: isDebuggable(app)
         app.registerActivityLifecycleCallbacks(this)
     }
 

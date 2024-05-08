@@ -12,7 +12,7 @@ import java.util.Stack
 internal fun Bundle.log() {
     val bundle = clone() as Bundle
     val parcel = Parcel.obtain()
-    bundle.writeToParcel(parcel, 0)
+    parcel.writeBundle(bundle)
     val size = parcel.dataSize()
     parcel.recycle()
     if (size > 200.shl(10)) {
@@ -32,7 +32,7 @@ internal fun Bundle.log() {
         when (value) {
             is Bundle -> {
                 val p = Parcel.obtain()
-                value.writeToParcel(p, 0)
+                p.writeBundle(value)
                 val s = p.dataSize()
                 p.recycle()
                 suffix = "parcelSize=$s"
@@ -73,7 +73,7 @@ private fun Bundle.flat(indent: String = ""): List<BundleElement> {
 @Suppress("UNCHECKED_CAST")
 private fun logAndroidxFragmentManagerState(element: BundleElement): Boolean {
     if (element.value.javaClass.name != "androidx.fragment.app.FragmentManagerState") return false
-    var isParentLogged = false
+    var logged = false
     val fragmentManagerState = element.value
     try {
         val activeFragmentStates = fragmentManagerState.javaClass.getDeclaredField("mActive").let {
@@ -85,7 +85,7 @@ private fun logAndroidxFragmentManagerState(element: BundleElement): Boolean {
         val fmsIndent = element.indent + if (element.isLast) "└─ " else "├─ "
         val fmsName = fragmentManagerState.javaClass.simpleName
         Log.d(TAG, "$fmsIndent$fmsName@${element.key} size=$size")
-        isParentLogged = true
+        logged = true
         val fragmentStateClass = Class.forName("androidx.fragment.app.FragmentState")
         val nameField = fragmentStateClass.getDeclaredField("mClassName")
         val whoField = fragmentStateClass.getDeclaredField("mWho")
@@ -104,5 +104,5 @@ private fun logAndroidxFragmentManagerState(element: BundleElement): Boolean {
     } catch (e: Exception) {
         // ignore
     }
-    return isParentLogged
+    return logged
 }
