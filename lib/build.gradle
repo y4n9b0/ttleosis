@@ -35,6 +35,6 @@ dependencies {
 
 ext {
     releaseArtifactId = 'ttleosis'
-    releaseVersion = '1.0.1'
+    releaseVersion = '1.0.2'
 }
 apply from: "${rootDir}/mvn-publish.gradle"
