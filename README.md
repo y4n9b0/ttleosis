@@ -36,25 +36,25 @@ adb logcat -s ttleosis
 
 Example logcat output:
 ```text
-D ttleosis: onActivityPostSaveInstanceState activity=y4n9b0.ttleosis.app.TtleosisReproduceActivity@8f26a15
-D ttleosis: Bundle parcelSize=7972
-D ttleosis: ├─ Bundle@android:viewHierarchyState parcelSize=772
-D ttleosis: │  └─ SparseArray@android:views size=6
-D ttleosis: ├─ Bundle@androidx.lifecycle.BundlableSavedStateRegistry.key parcelSize=6572
-D ttleosis: │  ├─ Bundle@androidx:appcompat parcelSize=4
-D ttleosis: │  ├─ Bundle@androidx.lifecycle.internal.SavedStateHandlesProvider parcelSize=4
-D ttleosis: │  ├─ Bundle@android:support:activity-result parcelSize=2180
+D ttleosis: onActivityPostSaveInstanceState activity=y4n9b0.ttleosis.app.TtleosisReproduceActivity@fc1a9d2
+D ttleosis: Bundle bytes=8184
+D ttleosis: ├─ Bundle@android:viewHierarchyState bytes=984
+D ttleosis: │  └─ SparseArray@android:views size=7
+D ttleosis: ├─ Bundle@androidx.lifecycle.BundlableSavedStateRegistry.key bytes=6572
+D ttleosis: │  ├─ Bundle@androidx:appcompat bytes=4
+D ttleosis: │  ├─ Bundle@androidx.lifecycle.internal.SavedStateHandlesProvider bytes=4
+D ttleosis: │  ├─ Bundle@android:support:activity-result bytes=2180
 D ttleosis: │  │  ├─ ArrayList@KEY_COMPONENT_ACTIVITY_REGISTERED_KEYS size=12
 D ttleosis: │  │  ├─ ArrayList@KEY_COMPONENT_ACTIVITY_REGISTERED_RCS size=12
-D ttleosis: │  │  ├─ Bundle@KEY_COMPONENT_ACTIVITY_PENDING_RESULT parcelSize=4
+D ttleosis: │  │  ├─ Bundle@KEY_COMPONENT_ACTIVITY_PENDING_RESULT bytes=4
 D ttleosis: │  │  └─ ArrayList@KEY_COMPONENT_ACTIVITY_LAUNCHED_KEYS size=0
-D ttleosis: │  └─ Bundle@android:support:fragments parcelSize=4076
+D ttleosis: │  └─ Bundle@android:support:fragments bytes=4076
 D ttleosis: │     └─ FragmentManagerState@android:support:fragments size=3
-D ttleosis: │        ├─ FragmentState@com.ly.genjidialog.GenjiDialog(86662b6c-f03a-408f-b394-28d074535130) parcelSize=1208
-D ttleosis: │        ├─ FragmentState@com.ly.genjidialog.GenjiDialog(c43b800f-e7e0-466b-9f64-a4fc0085595d) parcelSize=1208
-D ttleosis: │        └─ FragmentState@com.ly.genjidialog.GenjiDialog(db20cf61-7974-4793-ac46-7fc9d78d8c2c) parcelSize=1208
+D ttleosis: │        ├─ FragmentState@com.ly.genjidialog.GenjiDialog(4598bdc9-3e22-4971-bb46-6b2dc56af298) bytes=1208
+D ttleosis: │        ├─ FragmentState@com.ly.genjidialog.GenjiDialog(13d44e6c-49c7-48e5-8ad5-7830ddf71859) bytes=1208
+D ttleosis: │        └─ FragmentState@com.ly.genjidialog.GenjiDialog(af4fdee8-e074-4ee8-b590-203a93f06958) bytes=1208
 D ttleosis: ├─ Integer@android:lastAutofillId 
-D ttleosis: └─ FragmentManagerState@android:fragments parcelSize=260
+D ttleosis: └─ FragmentManagerState@android:fragments bytes=260
 ```
 
 License

@@ -13,12 +13,12 @@ internal fun Bundle.log() {
     val bundle = clone() as Bundle
     val parcel = Parcel.obtain()
     parcel.writeBundle(bundle)
-    val size = parcel.dataSize()
+    val dataSize = parcel.dataSize()
     parcel.recycle()
-    if (size > 200.shl(10)) {
-        Log.w(TAG, "${bundle.javaClass.simpleName} parcelSize=$size")
+    if (dataSize > 200.shl(10)) {
+        Log.w(TAG, "${bundle.javaClass.simpleName} bytes=$dataSize")
     } else {
-        Log.d(TAG, "${bundle.javaClass.simpleName} parcelSize=$size")
+        Log.d(TAG, "${bundle.javaClass.simpleName} bytes=$dataSize")
     }
     val stack = Stack<BundleElement>()
     bundle.flat().reversed().forEach(stack::push)
@@ -33,9 +33,9 @@ internal fun Bundle.log() {
             is Bundle -> {
                 val p = Parcel.obtain()
                 p.writeBundle(value)
-                val s = p.dataSize()
+                val ds = p.dataSize()
                 p.recycle()
-                suffix = "parcelSize=$s"
+                suffix = "bytes=$ds"
                 val indent = element.indent + if (element.isLast) "   " else "│  "
                 value.flat(indent).reversed().forEach(stack::push)
             }
@@ -49,9 +49,9 @@ internal fun Bundle.log() {
                 } else if (value.javaClass.name == "android.app.FragmentManagerState") {
                     val p = Parcel.obtain()
                     (value as Parcelable).writeToParcel(p, 0)
-                    val s = p.dataSize()
+                    val ds = p.dataSize()
                     p.recycle()
-                    suffix = "parcelSize=$s"
+                    suffix = "bytes=$ds"
                 }
             }
         }
@@ -94,12 +94,12 @@ private fun logAndroidxFragmentManagerState(element: BundleElement): Boolean {
         activeFragmentStates.forEachIndexed { index, fragmentState ->
             val parcel = Parcel.obtain()
             (fragmentState as Parcelable).writeToParcel(parcel, 0)
-            val parcelSize = parcel.dataSize()
+            val dataSize = parcel.dataSize()
             parcel.recycle()
             val name = nameField.get(fragmentState) as String
             val who = whoField.get(fragmentState) as String
             val indent = element.indent + (if (element.isLast) "   " else "│  ") + (if (index == size - 1) "└─ " else "├─ ")
-            Log.d(TAG, "$indent${fragmentState.javaClass.simpleName}@$name($who) parcelSize=$parcelSize")
+            Log.d(TAG, "$indent${fragmentState.javaClass.simpleName}@$name($who) bytes=$dataSize")
         }
     } catch (e: Exception) {
         // ignore
