@@ -36,25 +36,49 @@ adb logcat -s ttleosis
 
 Example logcat output:
 ```text
-D ttleosis: onActivityPostSaveInstanceState activity=y4n9b0.ttleosis.app.TtleosisReproduceActivity@fc1a9d2
-D ttleosis: Bundle bytes=8184
-D ttleosis: ├─ Bundle@android:viewHierarchyState bytes=984
-D ttleosis: │  └─ SparseArray@android:views size=7
-D ttleosis: ├─ Bundle@androidx.lifecycle.BundlableSavedStateRegistry.key bytes=6572
-D ttleosis: │  ├─ Bundle@androidx:appcompat bytes=4
-D ttleosis: │  ├─ Bundle@androidx.lifecycle.internal.SavedStateHandlesProvider bytes=4
-D ttleosis: │  ├─ Bundle@android:support:activity-result bytes=2180
-D ttleosis: │  │  ├─ ArrayList@KEY_COMPONENT_ACTIVITY_REGISTERED_KEYS size=12
-D ttleosis: │  │  ├─ ArrayList@KEY_COMPONENT_ACTIVITY_REGISTERED_RCS size=12
-D ttleosis: │  │  ├─ Bundle@KEY_COMPONENT_ACTIVITY_PENDING_RESULT bytes=4
-D ttleosis: │  │  └─ ArrayList@KEY_COMPONENT_ACTIVITY_LAUNCHED_KEYS size=0
-D ttleosis: │  └─ Bundle@android:support:fragments bytes=4076
-D ttleosis: │     └─ FragmentManagerState@android:support:fragments size=3
-D ttleosis: │        ├─ FragmentState@com.ly.genjidialog.GenjiDialog(4598bdc9-3e22-4971-bb46-6b2dc56af298) bytes=1208
-D ttleosis: │        ├─ FragmentState@com.ly.genjidialog.GenjiDialog(13d44e6c-49c7-48e5-8ad5-7830ddf71859) bytes=1208
-D ttleosis: │        └─ FragmentState@com.ly.genjidialog.GenjiDialog(af4fdee8-e074-4ee8-b590-203a93f06958) bytes=1208
+D ttleosis: onActivityPostSaveInstanceState activity=y4n9b0.ttleosis.app.TtleosisReproduceActivity@4ca12a
+D ttleosis: Bundle Bytes=6388
+D ttleosis: ├─ Bundle@android:viewHierarchyState Bytes=984
+D ttleosis: │  └─ SparseArray[7]@android:views 
+D ttleosis: │     ├─ android.view.AbsSavedState$1@16908290 Bytes=4
+D ttleosis: │     ├─ androidx.appcompat.widget.Toolbar$SavedState@2131230773 Bytes=76
+D ttleosis: │     ├─ android.view.AbsSavedState$1@2131230775 Bytes=4
+D ttleosis: │     ├─ android.view.AbsSavedState$1@2131230781 Bytes=4
+D ttleosis: │     ├─ android.view.AbsSavedState$1@2131230863 Bytes=4
+D ttleosis: │     ├─ com.google.android.material.button.MaterialButton$SavedState@2131231040 Bytes=72
+D ttleosis: │     └─ com.google.android.material.button.MaterialButton$SavedState@2131231045 Bytes=72
+D ttleosis: ├─ Bundle@androidx.lifecycle.BundlableSavedStateRegistry.key Bytes=4776
+D ttleosis: │  ├─ Bundle@androidx:appcompat Bytes=4
+D ttleosis: │  ├─ Bundle@androidx.lifecycle.internal.SavedStateHandlesProvider Bytes=4
+D ttleosis: │  ├─ Bundle@android:support:activity-result Bytes=1676
+D ttleosis: │  │  ├─ ArrayList[9]@KEY_COMPONENT_ACTIVITY_REGISTERED_KEYS
+D ttleosis: │  │  │  ├─ String=FragmentManager:StartIntentSenderForResult 
+D ttleosis: │  │  │  ├─ String=FragmentManager:StartActivityForResult 
+D ttleosis: │  │  │  ├─ String=FragmentManager:a0712bbc-9939-4523-b296-14d0377edb1e:StartIntentSenderForResult 
+D ttleosis: │  │  │  ├─ String=FragmentManager:1170ad3d-b798-426d-a958-f10debb3c4b6:StartActivityForResult 
+D ttleosis: │  │  │  ├─ String=FragmentManager:a0712bbc-9939-4523-b296-14d0377edb1e:RequestPermissions 
+D ttleosis: │  │  │  ├─ String=FragmentManager:1170ad3d-b798-426d-a958-f10debb3c4b6:RequestPermissions 
+D ttleosis: │  │  │  ├─ String=FragmentManager:RequestPermissions 
+D ttleosis: │  │  │  ├─ String=FragmentManager:1170ad3d-b798-426d-a958-f10debb3c4b6:StartIntentSenderForResult 
+D ttleosis: │  │  │  └─ String=FragmentManager:a0712bbc-9939-4523-b296-14d0377edb1e:StartActivityForResult 
+D ttleosis: │  │  ├─ ArrayList[9]@KEY_COMPONENT_ACTIVITY_REGISTERED_RCS
+D ttleosis: │  │  │  ├─ Integer=1942165898 
+D ttleosis: │  │  │  ├─ Integer=356918738 
+D ttleosis: │  │  │  ├─ Integer=182926120 
+D ttleosis: │  │  │  ├─ Integer=66967503 
+D ttleosis: │  │  │  ├─ Integer=1726710991 
+D ttleosis: │  │  │  ├─ Integer=14827718 
+D ttleosis: │  │  │  ├─ Integer=1393861623 
+D ttleosis: │  │  │  ├─ Integer=1236973480 
+D ttleosis: │  │  │  └─ Integer=413874826 
+D ttleosis: │  │  ├─ Bundle@KEY_COMPONENT_ACTIVITY_PENDING_RESULT Bytes=4
+D ttleosis: │  │  └─ ArrayList[0]@KEY_COMPONENT_ACTIVITY_LAUNCHED_KEYS
+D ttleosis: │  └─ Bundle@android:support:fragments Bytes=2784
+D ttleosis: │     └─ FragmentManagerState@android:support:fragments
+D ttleosis: │        ├─ FragmentState@com.ly.genjidialog.GenjiDialog(a0712bbc-9939-4523-b296-14d0377edb1e) Bytes=1208
+D ttleosis: │        └─ FragmentState@com.ly.genjidialog.GenjiDialog(1170ad3d-b798-426d-a958-f10debb3c4b6) Bytes=1208
 D ttleosis: ├─ Integer@android:lastAutofillId 
-D ttleosis: └─ FragmentManagerState@android:fragments bytes=260
+D ttleosis: └─ FragmentManagerState@android:fragments Bytes=260
 ```
 
 License

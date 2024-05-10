@@ -31,6 +31,7 @@ android {
 
 dependencies {
     implementation "androidx.startup:startup-runtime:1.1.1"
+    implementation 'androidx.customview:customview:1.1.0'
 }
 
 ext {
