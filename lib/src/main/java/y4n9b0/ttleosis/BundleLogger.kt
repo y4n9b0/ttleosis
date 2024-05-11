@@ -52,10 +52,10 @@ internal fun Bundle.log() {
             }
 
             androidx.customview.view.AbsSavedState::class.java.isAssignableFrom(value.javaClass)
-                    or android.view.AbsSavedState::class.java.isAssignableFrom(value.javaClass)
+                    || android.view.AbsSavedState::class.java.isAssignableFrom(value.javaClass)
             -> name = value.javaClass.name
 
-            logArray(element) or logCollection(element) or logAndroidxFragmentManagerState(element) -> continue
+            logArray(element) || logCollection(element) || logAndroidxFragmentManagerState(element) -> continue
 
             value.javaClass.name == "android.app.FragmentManagerState" -> {
                 // todo
