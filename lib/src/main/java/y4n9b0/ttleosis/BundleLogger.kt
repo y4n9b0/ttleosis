@@ -23,7 +23,6 @@ internal fun Bundle.log() {
     val stack = Stack<BundleElement>()
     bundle.flat().reversed().forEach(stack::push)
 
-
     while (stack.isNotEmpty()) {
         val element = stack.pop()
         val key = element.key
