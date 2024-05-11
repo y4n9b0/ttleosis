@@ -16,7 +16,7 @@ TtleOsis works on Android 5.0+ (API level 21+) and Java 8+.
 Releases
 --------
 ```groovy
-implementation 'com.github.y4n9b0:ttleosis:1.0.3'
+implementation 'com.github.y4n9b0:ttleosis:1.0.4'
 ```
 
 The latest release is available on [JitPack](https://jitpack.io/#y4n9b0/ttleosis),
