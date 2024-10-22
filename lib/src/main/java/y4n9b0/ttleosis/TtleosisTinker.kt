@@ -10,21 +10,13 @@ import android.util.Log
 import java.util.UUID
 import kotlin.collections.set
 
-object TtleosisTinker : ActivityLifecycleCallbacks {
+object TtleosisTinker : ActivityLifecycleCallbacks by noOpDelegate() {
 
     internal const val TAG = "ttleosis"
 
     var debug: Boolean? = null
 
     private val map = mutableMapOf<String, Bundle>()
-
-    override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {}
-    override fun onActivityStarted(activity: Activity) {}
-    override fun onActivityResumed(activity: Activity) {}
-    override fun onActivityPaused(activity: Activity) {}
-    override fun onActivityStopped(activity: Activity) {}
-    override fun onActivityDestroyed(activity: Activity) {}
-    override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) {}
 
     override fun onActivityPostSaveInstanceState(activity: Activity, outState: Bundle) {
         super.onActivityPostSaveInstanceState(activity, outState)
