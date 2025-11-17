@@ -45,7 +45,7 @@ internal fun Bundle.log() {
             }
 
             value is SparseArray<*> -> {
-                prefix = "[${value.size()}]"
+                prefix = "(${value.size()})"
                 val indent = element.indent + if (element.isLast) "   " else "│  "
                 value.flat(indent).reversed().forEach(stack::push)
             }
@@ -127,7 +127,7 @@ private fun logArray(element: BundleElement): Boolean {
     val key = element.key
     val name = value.javaClass.simpleName
     val size = value.size
-    Log.d(TAG, "${element.indent + if (element.isLast) "└─ " else "├─ "}$name[$size]@$key")
+    Log.d(TAG, "${element.indent + if (element.isLast) "└─ " else "├─ "}$name($size)@$key")
 
     var suffix: String
     value.forEachIndexed { index, item ->
@@ -155,7 +155,7 @@ private fun logCollection(element: BundleElement): Boolean {
     val key = element.key
     val name = value.javaClass.simpleName
     val size = value.size
-    Log.d(TAG, "${element.indent + if (element.isLast) "└─ " else "├─ "}$name[$size]@$key")
+    Log.d(TAG, "${element.indent + if (element.isLast) "└─ " else "├─ "}$name($size)@$key")
 
     var suffix: String
     value.forEachIndexed { index, item ->

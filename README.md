@@ -39,7 +39,7 @@ Example logcat output:
 D ttleosis: onActivityPostSaveInstanceState activity=y4n9b0.ttleosis.app.TtleosisReproduceActivity@4ca12a
 D ttleosis: Bundle Bytes=6388
 D ttleosis: ├─ Bundle@android:viewHierarchyState Bytes=984
-D ttleosis: │  └─ SparseArray[7]@android:views 
+D ttleosis: │  └─ SparseArray(7)@android:views
 D ttleosis: │     ├─ android.view.AbsSavedState$1@16908290 Bytes=4
 D ttleosis: │     ├─ androidx.appcompat.widget.Toolbar$SavedState@2131230773 Bytes=76
 D ttleosis: │     ├─ android.view.AbsSavedState$1@2131230775 Bytes=4
@@ -51,7 +51,7 @@ D ttleosis: ├─ Bundle@androidx.lifecycle.BundlableSavedStateRegistry.key Byt
 D ttleosis: │  ├─ Bundle@androidx:appcompat Bytes=4
 D ttleosis: │  ├─ Bundle@androidx.lifecycle.internal.SavedStateHandlesProvider Bytes=4
 D ttleosis: │  ├─ Bundle@android:support:activity-result Bytes=1676
-D ttleosis: │  │  ├─ ArrayList[9]@KEY_COMPONENT_ACTIVITY_REGISTERED_KEYS
+D ttleosis: │  │  ├─ ArrayList(9)@KEY_COMPONENT_ACTIVITY_REGISTERED_KEYS
 D ttleosis: │  │  │  ├─ String=FragmentManager:StartIntentSenderForResult 
 D ttleosis: │  │  │  ├─ String=FragmentManager:StartActivityForResult 
 D ttleosis: │  │  │  ├─ String=FragmentManager:a0712bbc-9939-4523-b296-14d0377edb1e:StartIntentSenderForResult 
@@ -61,7 +61,7 @@ D ttleosis: │  │  │  ├─ String=FragmentManager:1170ad3d-b798-426d-a958
 D ttleosis: │  │  │  ├─ String=FragmentManager:RequestPermissions 
 D ttleosis: │  │  │  ├─ String=FragmentManager:1170ad3d-b798-426d-a958-f10debb3c4b6:StartIntentSenderForResult 
 D ttleosis: │  │  │  └─ String=FragmentManager:a0712bbc-9939-4523-b296-14d0377edb1e:StartActivityForResult 
-D ttleosis: │  │  ├─ ArrayList[9]@KEY_COMPONENT_ACTIVITY_REGISTERED_RCS
+D ttleosis: │  │  ├─ ArrayList(9)@KEY_COMPONENT_ACTIVITY_REGISTERED_RCS
 D ttleosis: │  │  │  ├─ Integer=1942165898 
 D ttleosis: │  │  │  ├─ Integer=356918738 
 D ttleosis: │  │  │  ├─ Integer=182926120 
@@ -72,7 +72,7 @@ D ttleosis: │  │  │  ├─ Integer=1393861623
 D ttleosis: │  │  │  ├─ Integer=1236973480 
 D ttleosis: │  │  │  └─ Integer=413874826 
 D ttleosis: │  │  ├─ Bundle@KEY_COMPONENT_ACTIVITY_PENDING_RESULT Bytes=4
-D ttleosis: │  │  └─ ArrayList[0]@KEY_COMPONENT_ACTIVITY_LAUNCHED_KEYS
+D ttleosis: │  │  └─ ArrayList(0)@KEY_COMPONENT_ACTIVITY_LAUNCHED_KEYS
 D ttleosis: │  └─ Bundle@android:support:fragments Bytes=2784
 D ttleosis: │     └─ FragmentManagerState@android:support:fragments
 D ttleosis: │        ├─ FragmentState@com.ly.genjidialog.GenjiDialog(a0712bbc-9939-4523-b296-14d0377edb1e) Bytes=1208
